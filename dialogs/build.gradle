@@ -8,7 +8,7 @@ ext {
 	libraryVersion = '0.1.0'
 
 	libraryName = 'Dialogs'
-	libraryDescription = 'Dialogs for Android.'
+	libraryDescription = 'Utils and classes for comfort work with android dialogs.'
 	developerId = 'dyvoker'
 	developerName = 'Ivan Tormozov'
 	developerEmail = 'dyvoker@gmail.com'
