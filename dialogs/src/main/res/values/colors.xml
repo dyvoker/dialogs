@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<color name="dialogs_dyv_black">#181818</color>
+	<color name="dialogs_dyv_ripple_color">#40000000</color>
+	<color name="dialogs_dyv_ripple_color_old">#0F000000</color>
+	<color name="dialogs_dyv_button_color">#3498DB</color>
+</resources>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:orientation="vertical"
+	>
+
+	<TextView
+		android:id="@+id/dialogs_dyv_title"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginEnd="24dp"
+		android:layout_marginLeft="24dp"
+		android:layout_marginRight="24dp"
+		android:layout_marginStart="24dp"
+		android:layout_marginTop="21dp"
+		android:textColor="@color/dialogs_dyv_black"
+		android:textSize="20sp"
+		/>
+
+	<TextView
+		android:id="@+id/dialogs_dyv_text"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginEnd="24dp"
+		android:layout_marginLeft="24dp"
+		android:layout_marginRight="24dp"
+		android:layout_marginStart="24dp"
+		android:layout_marginTop="12dp"
+		android:textColor="@color/dialogs_dyv_black"
+		/>
+
+	<TextView
+		android:id="@+id/dialogs_dyv_ok"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="end"
+		android:layout_marginBottom="8dp"
+		android:layout_marginEnd="8dp"
+		android:layout_marginLeft="8dp"
+		android:layout_marginRight="8dp"
+		android:layout_marginStart="8dp"
+		android:layout_marginTop="20dp"
+		android:background="@drawable/dialogs_dyv_ripple"
+		android:paddingBottom="9dp"
+		android:paddingEnd="24dp"
+		android:paddingLeft="24dp"
+		android:paddingRight="24dp"
+		android:paddingStart="24dp"
+		android:paddingTop="9dp"
+		android:text="OK"
+		android:textAllCaps="true"
+		android:textColor="@color/dialogs_dyv_button_color"
+		android:textStyle="bold"
+		/>
+
+</LinearLayout>
