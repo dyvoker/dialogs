@@ -58,9 +58,9 @@ public class SimpleHintDialogWidget {
 	}
 
 	/**
-	 * Show dialog.
+	 * Creates dialog. Use only {@link #show()} method, if you don't need to change {@link Dialog}.
 	 */
-	public void show() {
+	public void create() {
 		dialog = new Dialog(context);
 		dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		dialog.setCanceledOnTouchOutside(isCanceledOnTouchOutside);
@@ -88,6 +88,15 @@ public class SimpleHintDialogWidget {
 				dismiss();
 			}
 		});
+	}
+
+	/**
+	 * Show dialog.
+	 */
+	public void show() {
+		if (dialog == null) {
+			create();
+		}
 		dialog.show();
 	}
 
@@ -95,11 +104,14 @@ public class SimpleHintDialogWidget {
 	 * Dismiss dialog.
 	 */
 	public void dismiss() {
-		dialog.dismiss();
+		if (dialog != null && dialog.isShowing()) {
+			dialog.dismiss();
+		}
 	}
 
 	/**
-	 * @return Created dialog. If you need some specific changes. NonNull only after {@link #show()}!
+	 * @return Created dialog. If you need some specific changes.
+	 * NonNull only after {@link #show()} or {@link #create()}!
 	 */
 	@Nullable
 	public Dialog getDialog() {
@@ -139,7 +151,7 @@ public class SimpleHintDialogWidget {
 	}
 
 	/**
-	 * Builder for simple dialog.
+	 * Builder for {@link SimpleHintDialogWidget}.
 	 */
 	public static class Builder {
 
@@ -154,7 +166,7 @@ public class SimpleHintDialogWidget {
 		private boolean isCanceledOnTouchOutside = true;
 
 
-		Builder(
+		private Builder(
 			@NonNull Context context,
 			@NonNull CharSequence title,
 			@NonNull CharSequence text
@@ -169,6 +181,7 @@ public class SimpleHintDialogWidget {
 
 		/**
 		 * @param buttonText Text on "OK" button.
+		 * @return {@link Builder} for {@link SimpleHintDialogWidget}.
 		 */
 		@NonNull
 		public Builder buttonText(@StringRes int buttonText) {
@@ -178,6 +191,7 @@ public class SimpleHintDialogWidget {
 
 		/**
 		 * @param buttonText Text on "OK" button.
+		 * @return {@link Builder} for {@link SimpleHintDialogWidget}.
 		 */
 		@NonNull
 		public Builder buttonText(@NonNull CharSequence buttonText) {
@@ -187,6 +201,7 @@ public class SimpleHintDialogWidget {
 
 		/**
 		 * @param titleColor Color of the dialog title.
+		 * @return {@link Builder} for {@link SimpleHintDialogWidget}.
 		 */
 		@NonNull
 		public Builder titleColor(@ColorInt int titleColor) {
@@ -196,6 +211,7 @@ public class SimpleHintDialogWidget {
 
 		/**
 		 * @param titleColor Color of the dialog title.
+		 * @return {@link Builder} for {@link SimpleHintDialogWidget}.
 		 */
 		@NonNull
 		public Builder titleColorRes(@ColorRes int titleColor) {
@@ -205,6 +221,7 @@ public class SimpleHintDialogWidget {
 
 		/**
 		 * @param textColor Color of the dialog text.
+		 * @return {@link Builder} for {@link SimpleHintDialogWidget}.
 		 */
 		@NonNull
 		public Builder textColor(@ColorInt int textColor) {
@@ -214,6 +231,7 @@ public class SimpleHintDialogWidget {
 
 		/**
 		 * @param textColor Color of the dialog text.
+		 * @return {@link Builder} for {@link SimpleHintDialogWidget}.
 		 */
 		@NonNull
 		public Builder textColorRes(@ColorRes int textColor) {
@@ -223,6 +241,7 @@ public class SimpleHintDialogWidget {
 
 		/**
 		 * @param buttonTextColor Text color of the dialog "OK" button.
+		 * @return {@link Builder} for {@link SimpleHintDialogWidget}.
 		 */
 		@NonNull
 		public Builder buttonTextColor(@ColorInt int buttonTextColor) {
@@ -232,6 +251,7 @@ public class SimpleHintDialogWidget {
 
 		/**
 		 * @param buttonTextColor Text color of the dialog "OK" button.
+		 * @return {@link Builder} for {@link SimpleHintDialogWidget}.
 		 */
 		@NonNull
 		public Builder buttonTextColorRes(@ColorRes int buttonTextColor) {
@@ -241,6 +261,7 @@ public class SimpleHintDialogWidget {
 
 		/**
 		 * @param isCanceledOnTouchOutside If true - user can cancel dialog by clicking on outside.
+		 * @return {@link Builder} for {@link SimpleHintDialogWidget}.
 		 */
 		@NonNull
 		public Builder isCanceledOnTouchOutside(boolean isCanceledOnTouchOutside) {
@@ -248,7 +269,9 @@ public class SimpleHintDialogWidget {
 			return this;
 		}
 
-
+		/**
+		 * @return {@link SimpleHintDialogWidget} with set up parameters.
+		 */
 		@NonNull
 		public SimpleHintDialogWidget build() {
 			return new SimpleHintDialogWidget(

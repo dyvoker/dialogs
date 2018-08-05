@@ -39,4 +39,21 @@
 		android:textColor="@color/dialogs_dyv_black"
 		android:textSize="18sp"
 		/>
+
+	<TextView
+		android:id="@+id/show_context_menu"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="24dp"
+		android:layout_marginRight="24dp"
+		android:layout_marginTop="24dp"
+		android:background="@drawable/dialogs_dyv_ripple"
+		android:paddingBottom="12dp"
+		android:paddingLeft="24dp"
+		android:paddingRight="24dp"
+		android:paddingTop="12dp"
+		android:text="@string/show_simple_context_menu"
+		android:textColor="@color/dialogs_dyv_black"
+		android:textSize="18sp"
+		/>
 </LinearLayout>

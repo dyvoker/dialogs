@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:orientation="vertical"
+	>
+
+	<TextView
+		android:id="@+id/dialogs_dyv_title"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginBottom="12dp"
+		android:layout_marginEnd="24dp"
+		android:layout_marginLeft="24dp"
+		android:layout_marginRight="24dp"
+		android:layout_marginStart="24dp"
+		android:layout_marginTop="21dp"
+		android:textColor="@color/dialogs_dyv_black"
+		android:textSize="20sp"
+		/>
+
+	<LinearLayout
+		android:id="@+id/dialogs_dyv_items_container"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:orientation="vertical"
+		/>
+
+</LinearLayout>

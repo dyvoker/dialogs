@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	>
+
+	<TextView
+		android:id="@+id/dialogs_dyv_text"
+		android:layout_width="match_parent"
+		android:layout_height="48dp"
+		android:background="@drawable/dialogs_dyv_ripple"
+		android:gravity="center_vertical"
+		android:minWidth="192dp"
+		android:paddingLeft="16dp"
+		android:paddingRight="16dp"
+		android:textColor="@color/dialogs_dyv_black"
+		android:textSize="16sp"
+		/>
+
+</FrameLayout>

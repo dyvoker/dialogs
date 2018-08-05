@@ -1,8 +1,9 @@
 <resources>
-	<string name="app_name">dialogs-lib</string>
+	<string name="app_name">Dialogs lib</string>
 
 	<string name="show_dialog_button">Show dialog</string>
 	<string name="show_custom_dialog_button">Show custom dialog</string>
+	<string name="show_simple_context_menu">Show simple context menu</string>
 
 	<string name="simple_hint_title">Hint dialog</string>
 	<string name="simple_hint_text">
