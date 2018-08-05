@@ -4,6 +4,7 @@
 	<string name="show_dialog_button">Show dialog</string>
 	<string name="show_custom_dialog_button">Show custom dialog</string>
 	<string name="show_simple_context_menu">Show simple context menu</string>
+	<string name="show_custom_context_menu">Show custom context menu</string>
 
 	<string name="simple_hint_title">Hint dialog</string>
 	<string name="simple_hint_text">
@@ -15,4 +16,9 @@
 		Custom SimpleHintDialogWidget successfully showed.\nGood work!
 	</string>
 	<string name="custom_hint_button">GREAT!</string>
+
+	<string name="some_menu_title">Some item</string>
+	<string name="add">Add</string>
+	<string name="edit">Edit</string>
+	<string name="remove">Remove</string>
 </resources>

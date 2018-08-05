@@ -6,13 +6,23 @@
 	android:background="@drawable/dialogs_dyv_ripple"
 	>
 
+	<ImageView
+		android:id="@+id/dialogs_dyv_icon"
+		android:layout_width="24dp"
+		android:layout_height="24dp"
+		android:layout_marginBottom="12dp"
+		android:layout_marginLeft="16dp"
+		android:layout_marginRight="12dp"
+		android:layout_marginTop="12dp"
+		/>
+
 	<TextView
 		android:id="@+id/dialogs_dyv_text"
 		android:layout_width="match_parent"
 		android:layout_height="48dp"
+		android:layout_marginLeft="58dp"
 		android:gravity="center_vertical"
 		android:minWidth="192dp"
-		android:paddingLeft="16dp"
 		android:paddingRight="16dp"
 		android:textColor="@color/dialogs_dyv_black"
 		android:textSize="16sp"

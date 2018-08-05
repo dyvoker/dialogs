@@ -6,7 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.github.dyvoker.dialogs.SimpleHintDialogWidget;
+import com.github.dyvoker.dialogs.context_menu.ClickListener;
 import com.github.dyvoker.dialogs.context_menu.ContextMenuWidget;
+import com.github.dyvoker.dialogs.context_menu.IconMenuItem;
 import com.github.dyvoker.dialogs.context_menu.SimpleMenuItem;
 
 public class MainActivity extends AppCompatActivity {
@@ -58,6 +60,30 @@ public class MainActivity extends AppCompatActivity {
 					.addItem(SimpleMenuItem.newBuilder(context, "First").build())
 					.addItem(SimpleMenuItem.newBuilder(context, "Second").build())
 					.addItem(SimpleMenuItem.newBuilder(context, "Third").build())
+					.build()
+					.show();
+			}
+		});
+
+		View showCustomContextMenu = findViewById(R.id.show_custom_context_menu);
+		showCustomContextMenu.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				IconMenuItem add = IconMenuItem
+					.newBuilder(context, R.string.add, R.drawable.ic_add)
+					.clickListener(new ClickListener() {
+						@Override
+						public void onClick() {
+							// Some action.
+						}
+					})
+					.dismissOnClick(false)
+					.build();
+				ContextMenuWidget
+					.newBuilder(context)
+					.addItem(add)
+					.addItem(IconMenuItem.newBuilder(context, R.string.edit, R.drawable.ic_edit).build())
+					.addItem(IconMenuItem.newBuilder(context, R.string.remove, R.drawable.ic_remove).build())
 					.build()
 					.show();
 			}

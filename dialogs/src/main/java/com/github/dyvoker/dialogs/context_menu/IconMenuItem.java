@@ -1,20 +1,23 @@
 package com.github.dyvoker.dialogs.context_menu;
 
 import android.content.Context;
-import android.support.annotation.LayoutRes;
+import android.graphics.drawable.Drawable;
+import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.annotation.StringRes;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.github.dyvoker.dialogs.R;
 
 /**
- * Simple implementation of the {@link ContextMenuItemWidget}.
+ * Implementation of the {@link ContextMenuItemWidget} with text and icon.
  */
 @SuppressWarnings("unused")
-public class SimpleMenuItem implements ContextMenuItemWidget {
+public class IconMenuItem implements ContextMenuItemWidget {
 
 	@NonNull
 	private final View root;
@@ -25,7 +28,7 @@ public class SimpleMenuItem implements ContextMenuItemWidget {
 	/**
 	 * Private constructor. Use {@link Builder} instead.
 	 */
-	private SimpleMenuItem(
+	private IconMenuItem(
 		@NonNull View root,
 		@Nullable final ClickListener clickListener,
 		final boolean dismissOnClick
@@ -64,42 +67,38 @@ public class SimpleMenuItem implements ContextMenuItemWidget {
 	}
 
 	/**
-	 * Default builder. Using {@link TextView} for showing text.
-	 *
 	 * @param context Context.
 	 * @param text Caption on item.
+	 * @param icon Icon for item.
 	 * @return Builder for {@link SimpleMenuItem}.
 	 */
 	@NonNull
 	public static Builder newBuilder(
 		@NonNull Context context,
-		@NonNull CharSequence text
+		@NonNull CharSequence text,
+		@NonNull Drawable icon
 	) {
-		return new Builder(context, text);
+		return new Builder(context, text, icon);
 	}
 
 	/**
-	 * @param root Root view of the item.
-	 * @return Builder for {@link SimpleMenuItem}.
-	 */
-	@NonNull
-	public static Builder newBuilder(
-		@NonNull View root
-	) {
-		return new Builder(root);
-	}
-
-	/**
+	 *
 	 * @param context Context.
-	 * @param layoutId Id of layout for item.
+	 * @param textId String id for item caption.
+	 * @param iconId Drawable id for item icon.
 	 * @return Builder for {@link SimpleMenuItem}.
 	 */
 	@NonNull
 	public static Builder newBuilder(
 		@NonNull Context context,
-		@LayoutRes int layoutId
+		@StringRes int textId,
+		@DrawableRes int iconId
 	) {
-		return new Builder(context, layoutId);
+		return new Builder(
+			context,
+			context.getString(textId),
+			context.getResources().getDrawable(iconId)
+		);
 	}
 
 
@@ -115,20 +114,17 @@ public class SimpleMenuItem implements ContextMenuItemWidget {
 		private ClickListener clickListener;
 		private boolean dismissOnClick = true;
 
-		private Builder(@NonNull Context context, @NonNull CharSequence text) {
+		private Builder(
+			@NonNull Context context,
+			@NonNull CharSequence text,
+			@NonNull Drawable icon
+		) {
 			LayoutInflater inflater = LayoutInflater.from(context);
-			root = inflater.inflate(R.layout.dialogs_dyv_text_item, null, false);
+			root = inflater.inflate(R.layout.dialogs_dyv_icon_text_item, null, false);
 			TextView textView = root.findViewById(R.id.dialogs_dyv_text);
 			textView.setText(text);
-		}
-
-		private Builder(@NonNull View root) {
-			this.root = root;
-		}
-
-		private Builder(@NonNull Context context, @LayoutRes int layoutId) {
-			LayoutInflater inflater = LayoutInflater.from(context);
-			root = inflater.inflate(layoutId, null, false);
+			ImageView iconView = root.findViewById(R.id.dialogs_dyv_icon);
+			iconView.setImageDrawable(icon);
 		}
 
 		/**
@@ -155,8 +151,8 @@ public class SimpleMenuItem implements ContextMenuItemWidget {
 		 * @return {@link SimpleMenuItem} with set up parameters.
 		 */
 		@NonNull
-		public SimpleMenuItem build() {
-			return new SimpleMenuItem(
+		public IconMenuItem build() {
+			return new IconMenuItem(
 				root,
 				clickListener,
 				dismissOnClick

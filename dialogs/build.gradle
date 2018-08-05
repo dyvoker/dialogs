@@ -5,7 +5,7 @@ apply plugin: 'com.jfrog.bintray'
 ext {
 	publishedGroupId = 'com.github.dyvoker'
 	artifact = 'dialogs'
-	libraryVersion = '0.1.0-test'
+	libraryVersion = '0.2.0'
 
 	libraryName = 'Dialogs'
 	libraryDescription = 'Utils and classes for comfort work with android dialogs.'
@@ -31,7 +31,7 @@ android {
 	defaultConfig {
 		minSdkVersion 14
 		targetSdkVersion 27
-		versionCode 1
+		versionCode 2
 		versionName libraryVersion
 	}
 
