@@ -9,13 +9,12 @@
 	<TextView
 		android:id="@+id/dialogs_dyv_title"
 		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_marginBottom="12dp"
+		android:layout_height="48dp"
 		android:layout_marginEnd="24dp"
-		android:layout_marginLeft="24dp"
-		android:layout_marginRight="24dp"
+		android:layout_marginLeft="16dp"
+		android:layout_marginRight="16dp"
 		android:layout_marginStart="24dp"
-		android:layout_marginTop="21dp"
+		android:gravity="center_vertical"
 		android:textColor="@color/dialogs_dyv_black"
 		android:textSize="20sp"
 		/>

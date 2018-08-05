@@ -60,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
 					.addItem(SimpleMenuItem.newBuilder(context, "First").build())
 					.addItem(SimpleMenuItem.newBuilder(context, "Second").build())
 					.addItem(SimpleMenuItem.newBuilder(context, "Third").build())
+					.isCanceledOnTouchOutside(false)
 					.build()
 					.show();
 			}
@@ -69,8 +70,8 @@ public class MainActivity extends AppCompatActivity {
 		showCustomContextMenu.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				IconMenuItem add = IconMenuItem
-					.newBuilder(context, R.string.add, R.drawable.ic_add)
+				IconMenuItem edit = IconMenuItem
+					.newBuilder(context, R.string.edit, R.drawable.ic_edit)
 					.clickListener(new ClickListener() {
 						@Override
 						public void onClick() {
@@ -81,8 +82,8 @@ public class MainActivity extends AppCompatActivity {
 					.build();
 				ContextMenuWidget
 					.newBuilder(context)
-					.addItem(add)
-					.addItem(IconMenuItem.newBuilder(context, R.string.edit, R.drawable.ic_edit).build())
+					.title(R.string.some_menu_title)
+					.addItem(edit)
 					.addItem(IconMenuItem.newBuilder(context, R.string.remove, R.drawable.ic_remove).build())
 					.build()
 					.show();

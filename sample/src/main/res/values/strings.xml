@@ -18,7 +18,6 @@
 	<string name="custom_hint_button">GREAT!</string>
 
 	<string name="some_menu_title">Some item</string>
-	<string name="add">Add</string>
 	<string name="edit">Edit</string>
 	<string name="remove">Remove</string>
 </resources>
